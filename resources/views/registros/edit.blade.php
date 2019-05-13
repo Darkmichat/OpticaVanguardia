@@ -21,6 +21,9 @@ role="dialog" tabindex="-1" id="modal-edit-{{$registro->id}}">
 				    <label for ="">Nombre del Usuario</label>
 				    <input value="{{$registro->nombre_usuario}}" type="text" name="nombre_usuario" class="form-control" required="">
 
+				      <label for ="">N°Lentes</label>
+				    <input value="{{$registro->lentes}}" type="text" name="lentes" class="form-control" required="">
+
 				     <label for ="">Rut</label>
 				    <input value="{{$registro->rut}}" type="text" name="rut" class="form-control" required="">
 

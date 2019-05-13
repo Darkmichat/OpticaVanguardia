@@ -271,7 +271,9 @@
      catch(e) {}}
   </script>
 
+  <script src="./js/index.js"></script>
 
+  
 <!-- SCRIPT PARA FORMATO DE RUT -->
 <script type="text/javascript">
   $(function(){

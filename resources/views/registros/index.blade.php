@@ -17,6 +17,14 @@
 		               {{ Form::text('nombre_usuario', null, ['class' => 'form-control' ,'placeholder' => 'Ingrese Nombre']) }}
 		                </div>
 
+		                <select type="int" name="estado_tran" id="estado_tran" class="form-control" >
+
+						    	<option value="">--Seleccione--</option>
+						    	<option value="VD">VD</option>
+						    	<option value="MO">MO</option>
+						    	<option value="CE">CE</option>
+				   		 </select>
+
 		                 
 		            
 		            <div class="form-group">
@@ -39,6 +47,8 @@
 					<thead>
 						<th>O T</th>
 						<th>Nombre</th>
+						<th>N°Lentes</th>
+						<th>Fecha prueba</th>
 						<th>Rut</th>
 						<th>Fono</th>
 						<th>E/Pago</th>
@@ -50,6 +60,8 @@
 					<tr>
 						<td>{{ $registro->ot }}</td>
 						<td>{{ $registro->nombre_usuario }}</td>
+						<td>{{ $registro->lentes }}</td>
+						<td>{{ $registro->created_at }}</td>
 						<td>{{ $registro->rut }}</td>
 						<td>{{ $registro->fono }}</td>
 						<td>{{ $registro->estado_pago }}</td>

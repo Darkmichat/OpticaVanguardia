@@ -22,6 +22,18 @@
 		               {{ Form::date('created_at', null, ['class' => 'form-control' ,'placeholder' => 'Ingrese id']) }}
 		                </div>
 
+
+		                
+            		<select type="int" name="registro_id" id="registro_id" class="form-control" >
+	            		<option value="">--Seleccione--</option>
+
+	            		@foreach ($registros as $registro)
+	            		<option value="{{$registro->id}}"->{{$registro->nombre_usuario}}</option>
+	            		@endforeach
+            		</select>
+      		
+
+		                
 		                 
 		            
 		            <div class="form-group">
@@ -36,7 +48,7 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8	">
+		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-8	">
 			<div class="table-responsive">
 				
 				<table class="table table-stripped table-bordered table-condensed table-hover">
@@ -48,6 +60,7 @@
 						<th>F/Act</th>
 						<th>Pago efectivo</th>
 						<th>Pago electronico</th>
+						<th>Monto total</th>
 
 
 					</thead>
@@ -59,6 +72,7 @@
 						<td>{{ $pago->updated_at}}</td>
 						<td>${{ $pago->valor_efectivo }}</td>
 						<td>${{ $pago->valor_electronico }}</td>
+						<td>${{ $pago->registro->valor_pagar }}</td>
 						<td>
 							<?php $suma+=  $pago->valor_efectivo; ?>
 							<?php $suma2+=  $pago->valor_electronico; ?>
@@ -74,7 +88,7 @@
 						<th>Ele/total $<?php echo number_format($suma2); ?> </th>
 					</tr>
 				</table>
-				{{ $pagos->render() }}
+				{{ $pagos->appends(Request::only(['created_at']))->render() }}
 			</div>
 		</div>
 	</div>

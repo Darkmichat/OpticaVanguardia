@@ -18,4 +18,10 @@ class Payment extends Model
     	if($created_at)
             return $query->where('created_at', 'LIKE', "%$created_at%");
     }
+
+    public function scopeNombre($query, $registro_id){
+
+    	if($registro_id)
+            return $query->where('registro_id', 'LIKE', "%$registro_id%");
+    }
 }

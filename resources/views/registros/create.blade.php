@@ -20,6 +20,9 @@ role="dialog" tabindex="-1" id="modalcreate">
 				    <label for ="">Nombre</label>
 				    <input type="text" name="nombre_usuario" class="form-control"  required="Campo Requerido">
 
+				    <label for ="">N°Lentes</label>
+				    <input type="text" name="lentes" class="form-control"  required="Campo Requerido">
+
 				    <label for ="">Rut</label>
 				    <input type="text" name="rut" class="form-control" id="rut"   required="Campo Requerido">
 
@@ -30,7 +33,7 @@ role="dialog" tabindex="-1" id="modalcreate">
 				    <input type="date" name="fecha_receta" class="form-control"  required="Campo Requerido">
 
 				    <label for ="">Monto Total</label>
-				    <input type="text" name="valor_pagar" class="form-control"  required="Campo Requerido">
+				    <input type="text" name="valor_pagar" class="form-control" required="Campo Requerido">
 
 				    <label for ="">Estado del pago</label>
 				    <select type="int" name="estado_pago" id="estado_pago" class="form-control" required="Campo Requerido">
@@ -60,6 +63,8 @@ role="dialog" tabindex="-1" id="modalcreate">
 	{{Form::Close()}}
 
 </div>  
+
+
 
 
 

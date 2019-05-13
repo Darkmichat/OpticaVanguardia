@@ -13,13 +13,20 @@ use Carbon\Carbon;
 USE DB;
 
 class PagoController extends Controller
-{
+{   
+
+     public function __construct(){
+        $this->middleware('auth');
+    }
+    
    public function index(Request $request){
         $registros = Registro::all();
    		$created_at  = $request->get('created_at');
+        $registro_id  = $request->get('registro_id');
         $pagos = Payment::orderBy('id', 'DESC')
         ->fecha($created_at)
-        ->paginate(10);
+        ->nombre($registro_id)
+        ->paginate(20);
     
         return view('pagos.index', compact('pagos','registros'));
     }

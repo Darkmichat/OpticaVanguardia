@@ -13,9 +13,15 @@
 				{{ Form::open(['route' => 'filtrar.index', 'method' => 'GET', 'class' => 'form-inline pull-left']) }}
 		                
 
-		                <div class="form-group">
-		               {{ Form::text('estado', null, ['class' => 'form-control' ,'placeholder' => 'Ingrese Estado']) }}
-		                </div>
+		             
+
+		                 <select type="int" name="estado" id="estado" class="form-control" required="Campo Requerido">
+
+						    	<option value="">--Seleccione--</option>
+						    	<option value="VD">VD</option>
+						    	<option value="MO">MO</option>
+						    	<option value="CE">CE</option>
+				   		 </select>
 
 		                 <div class="form-group">
 		               {{ Form::date('primer_dia', null, ['class' => 'form-control']) }}
@@ -77,4 +83,7 @@
 	</div>
 </div>
 </div>
+
+
+
 @endsection

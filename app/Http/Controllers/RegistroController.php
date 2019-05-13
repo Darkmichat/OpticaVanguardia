@@ -13,14 +13,21 @@ USE DB;
 
 class RegistroController extends Controller
 {
+
+     public function __construct(){
+        $this->middleware('auth');
+    }
+    
+    
     public function index(Request $request){
 
         
 
     	$nombre_usuario  = $request->get('nombre_usuario');
-        $estado_pago          = $request->get('estado_pago');
+        $estado_tran          = $request->get('estado_tran');
         $registros = Registro::orderBy('id', 'DESC')
         ->name($nombre_usuario)
+        ->estado($estado_tran)
         ->paginate(20);
     
         return view('registros.index', compact('registros'));
@@ -42,6 +49,7 @@ class RegistroController extends Controller
         $registros = new Registro();
         $registros->ot= $request->input('ot');
         $registros->nombre_usuario= $request->input('nombre_usuario');
+        $registros->lentes= $request->input('lentes');
         $registros->rut= $request->input('rut');
         $registros->fono= $request->input('fono');
         $registros->fecha_receta= $request->input('fecha_receta');
@@ -72,6 +80,7 @@ class RegistroController extends Controller
 
         $registros->ot= $request->get('ot');
         $registros->nombre_usuario= $request->get('nombre_usuario');
+        $registros->lentes= $request->get('lentes');
         $registros->rut= $request->get('rut');
         $registros->fono= $request->get('fono');
         $registros->fecha_receta= $request->get('fecha_receta');
